@@ -2,7 +2,7 @@
   "extends": ["eslint:recommended", "prettier"],
   "plugins": [],
   "parserOptions": {
-    "ecmaVersion": "2022",
+    "ecmaVersion": 2022,
     "sourceType": "module",
     "ecmaFeatures": {
       "jsx": true
@@ -12,5 +12,6 @@
     "es6": true,
     "browser": true,
     "node": true
-  }
+  },
+  "ignorePatterns": ["**/*.html"]
 }
