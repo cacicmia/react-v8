@@ -5,7 +5,9 @@ import Carousel from './Carousel';
 import ErrorBoundary from './ErrorBoundary';
 import AdoptedPetContext from './AdoptedPetContext';
 import { useState, useContext } from 'react';
-import Modal from './Modal';
+
+const Modal = lazy(() => import('./Modal'));
+
 const Details = () => {
   const [showModal, setShowModal] = useState(false);
   const { id } = useParams();
