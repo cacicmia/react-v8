@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Details from './Details';
 import { useState } from 'react';
 import AdoptedPetContext from './AdoptedPetContext';
+import { Pet } from './APIResponsesTypes';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -17,7 +18,7 @@ const queryClient = new QueryClient({
 });
 
 const App = () => {
-  const adoptedPet = useState(null);
+  const adoptedPet = useState<Pet | null>(null);
   return (
     <BrowserRouter>
       <QueryClientProvider client={queryClient}>
@@ -36,5 +37,8 @@ const App = () => {
   );
 };
 const container = document.getElementById('root');
+if (!container) {
+  throw new Error('no container to render to');
+}
 const root = createRoot(container);
 root.render(<App />);
